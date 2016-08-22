@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/mypalg/drive-pi/issues"
   },
-  "homepage": "https://github.com/mypalg/drive-pi#readme"
+  "homepage": "https://github.com/mypalg/drive-pi#readme",
+  "dependencies": {
+    "wiring-pi": "^2.1.1"
+  }
 }
