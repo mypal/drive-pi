@@ -1,0 +1,24 @@
+{
+  "name": "drive-pi",
+  "version": "1.0.0",
+  "description": "something for rpi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mypalg/drive-pi.git"
+  },
+  "keywords": [
+    "raspberrypi",
+    "rpi",
+    "driver"
+  ],
+  "author": "mypal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mypalg/drive-pi/issues"
+  },
+  "homepage": "https://github.com/mypalg/drive-pi#readme"
+}
