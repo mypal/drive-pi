@@ -1,21 +1,21 @@
 var wpi = require('wiring-pi');
 
-const MAX_TIMINGS = 85,
+var MAX_TIMINGS = 85,
     DHT_PIN = 3;
 
 
 function readDhtData() {
-    let lastState = wpi.HIGH,
+    var lastState = wpi.HIGH,
         counter = 0,
         j = 0, i;
-    let data = [0, 0, 0, 0, 0];
+    var data = [0, 0, 0, 0, 0];
     wpi.pinMode(DHT_PIN, wpi.OUTPUT);
     wpi.digitalWrite(DHT_PIN, wpi.LOW);
     wpi.delay(18);
 
     wpi.pinMode(DHT_PIN, wpi.INPUT);
 
-    for (let i = 0; i < MAX_TIMINGS; i++) {
+    for (var i = 0; i < MAX_TIMINGS; i++) {
         counter = 0;
         while (wpi.digitalRead(DHT_PIN) == lastState) {
             counter++;
