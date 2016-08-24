@@ -1,7 +1,7 @@
 var wpi = require('wiring-pi');
 
 var MAX_TIMINGS = 85,
-    DHT_PIN = 3;
+    DHT_PIN = 7;
 
 
 function readDhtData() {
@@ -11,25 +11,28 @@ function readDhtData() {
     var data = [0, 0, 0, 0, 0];
     wpi.pinMode(DHT_PIN, wpi.OUTPUT);
     wpi.digitalWrite(DHT_PIN, wpi.LOW);
-    wpi.delay(18);
+    wpi.delayMicroseconds(500);
 
     wpi.pinMode(DHT_PIN, wpi.INPUT);
+
+	var list = [];
 
     for (var i = 0; i < MAX_TIMINGS; i++) {
         counter = 0;
         while (wpi.digitalRead(DHT_PIN) == lastState) {
             counter++;
-            wpi.delayMicroseconds(1);
-            if (counter == 255) {
+            //wpi.delayMicroseconds(1);
+            if (counter == 2555555) {
                 break;
             }
         }
-        console.log(lastState, counter);
+		list.push(lastState+' '+counter);
         lastState = wpi.digitalRead(DHT_PIN);
-        if (counter == 255) {
+        if (counter == 2555555) {
             break;
         }
     }
+	console.log(list.join('\n'));
 }
 
 if (wpi.wiringPiSetup() == -1) {

@@ -1,0 +1,7 @@
+{
+	apps: [{
+		name: "driver job",
+		script: "./index.js",
+		watch: true
+	}]
+}
